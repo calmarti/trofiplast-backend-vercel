@@ -7,7 +7,6 @@ var logger = require("morgan");
 require("dotenv").config();
 require("./lib/connectMongoose");
 
-//TODO: inicializar la bd en Mongo Atlas
 //TODO: el handler.js es solo un ejemplo, prueba a quitarlo
 //TODO: ¿integración vercel mongo-atlas?
 
