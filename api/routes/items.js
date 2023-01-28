@@ -66,7 +66,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-//TODO: probar con postman
+
 router.get("/:id", async (req, res, next) => {
   try {
     const _id = req.params.id;
