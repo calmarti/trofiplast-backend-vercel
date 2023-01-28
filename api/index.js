@@ -1,15 +1,15 @@
 // var createError = require("http-errors");
 var express = require("express");
 const { get } = require("http");
-// var path = require("path");
-// var cookieParser = require("cookie-parser");
-// var logger = require("morgan");
-// require("dotenv").config();
-// require("./lib/connectMongoose");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
+require("dotenv").config();
+require("./lib/connectMongoose");
 
-// var cors = require('cors');
+var cors = require('cors');
 
-// console.log(process.env);
+console.log(process.env);
 
 var app = express();
 
@@ -22,16 +22,16 @@ app.get("/api/", (req, res)=>{
 //app.set("view engine", "ejs");
 
 
-//app.use(cors());
-//app.use(logger("dev"));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
+app.use(cors());
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, "public")));
 
 
 //rutas del api
-// app.use("/apiv1/items", require("./routes/items"));
+app.use("/api/items", require("./routes/items"));
 // app.use("/apiv1/fields", require("./routes/fields"));
 
 
