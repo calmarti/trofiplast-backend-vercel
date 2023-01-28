@@ -8,8 +8,8 @@ require("dotenv").config();
 require("./lib/connectMongoose");
 
 //TODO: el handler.js es solo un ejemplo, prueba a quitarlo
-//TODO: ¿integración vercel mongo-atlas?
-
+//TODO: serverless function arroja timeout error, ¿probar integración vercel mongo-atlas?
+//TODO: logs: no reconoce la variable de entorno MONGODB_URI
 
 var cors = require('cors');
 
