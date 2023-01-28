@@ -1,0 +1,25 @@
+{
+  "name": "trofiplast-backend-vercel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calmarti/trofiplast-backend-vercel.git"
+  },
+  "keywords": [
+    "trofiplast"
+  ],
+  "author": "Ivan Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calmarti/trofiplast-backend-vercel/issues"
+  },
+  "homepage": "https://github.com/calmarti/trofiplast-backend-vercel#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
