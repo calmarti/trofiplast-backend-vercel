@@ -8,8 +8,20 @@ require("dotenv").config();
 require("./lib/connectMongoose");
 
 //TODO: el handler.js es solo un ejemplo, prueba a quitarlo
-//TODO: serverless function arroja timeout error, ¿probar integración vercel mongo-atlas?
-//TODO: logs: no reconoce la variable de entorno MONGODB_URI
+//TODO: serverless function arroja timeout error
+//TODO: logs: time out (10.01 secs) error - this time it does the call to the db  
+//he eliminado la variable MONGODB_URI de los settings del proyecto de Vercel a ver si por eso no hace la integración con Atlas
+//Integración Atlas-Vercel succesful, pero pone que no hay clusters integrados con Vercel
+//follow up: revisar email de Atlas confirmando integración
+//The integration is set up successfully. However, an error happened when attempting to link the Atlas cluster to Vercel projects. 
+//Please visit the Organization's Integrations
+//page to try again.
+
+//We are writing to inform you that your Vercel account is no longer integrated with MongoDB Atlas.
+
+//Please note that the Atlas database user(s) and network access rule(s) that were created as part of the integration were not removed. You can update them via logging into Atlas UI. 
+
+
 
 var cors = require('cors');
 
