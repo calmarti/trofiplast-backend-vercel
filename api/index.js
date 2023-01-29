@@ -49,7 +49,7 @@ app.use(cookieParser());
 
 //rutas del api
 app.use("/api/items", require("./routes/items"));
-// app.use("/apiv1/fields", require("./routes/fields"));
+app.use("/api/fields", require("./routes/fields"));
 
 
 // catch 404 and forward to error handler
