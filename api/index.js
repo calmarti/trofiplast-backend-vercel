@@ -7,6 +7,7 @@ var logger = require("morgan");
 require("dotenv").config();
 require("./lib/connectMongoose");
 
+
 //TODO: el handler.js es solo un ejemplo, prueba a quitarlo
 //TODO: serverless function arroja timeout error
 //TODO: logs: time out (10.01 secs) error - this time it does the call to the db  
