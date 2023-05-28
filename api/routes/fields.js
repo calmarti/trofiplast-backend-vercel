@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Item = require("../models/Item");
 
-//rutas que devuelven array de valores posibles de los distintos campos
+//ruta que devuelve array de valores posibles de los distintos campos
 router.get("/:field", async (req, res, next) => {
   const field = req.params.field;
   console.log(field);

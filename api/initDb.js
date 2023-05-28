@@ -3,7 +3,7 @@ require("dotenv").config();
 // const conn = require("./lib/connectMongoose");
 const fs = require("fs");
 const readline = require("readline");
-const sample = "./db_829_corregida.json";
+const sample = "./bd_07_04_23.json";
 const Item = require("./models/Item");
 
 
