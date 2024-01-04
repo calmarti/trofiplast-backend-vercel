@@ -1,9 +1,17 @@
 "use strict";
+
+//TODO: dos errores:
+//1: No reconoce el nuevo JSON como tal al ejecutar initDB
+//2: En el front la llamada falla por tema de CORS, aún existiendo
+//el antídoto del cors en el index del back
+
 require("dotenv").config();
 // const conn = require("./lib/connectMongoose");
 const fs = require("fs");
 const readline = require("readline");
-const sample = "./bd_07_04_23.json";
+//const sample = "bd_07_04_23_2000_items.json";
+//const sample = "./db_829_corregida.json"
+const sample = "./sample_04_01_24.json"
 const Item = require("./models/Item");
 
 

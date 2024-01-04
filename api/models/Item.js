@@ -27,8 +27,8 @@ const itemSchema = mongoose.Schema({
   area: { type: String, index: true },
   origin: { type: String, index: true },
   country: { type: String, index: true },
-  from: { type: Number },
-  to: { type: Number },
+  from: { type: String },
+  to: { type: String },
   // date1: { type: Date, set: changeDateFormat },
   // date2: { type: Date, set: changeDateFormat },
   // date3: { type: Date, set: changeDateFormat },
@@ -63,6 +63,8 @@ itemSchema.statics.getFieldValues = async function (field) {
     next(err);
   }
 };
+
+
 
 const Item = mongoose.model("Item", itemSchema);
 
