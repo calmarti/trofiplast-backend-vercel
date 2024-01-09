@@ -55,7 +55,7 @@ itemSchema.statics.customFind = async function (filters, sort, skip, limit) {
   return result;
 };
 
-itemSchema.statics.getFieldValues = async function (field) {
+/* itemSchema.statics.getFieldValues = async function (field) {
   try {
     const values = await Item.find().distinct(`${field}`);
     return values;
@@ -63,8 +63,38 @@ itemSchema.statics.getFieldValues = async function (field) {
     next(err);
   }
 };
+ */
+//nuevo getFieldValues: utiliza el framework aggregate de mongo
+itemSchema.statics.getFieldValues = async function () {
+  try {
+    const fields = ['group', 'order', 'family', 'genus', 'species', 'area', 'origin', 'country'];
+    const aggregationPipeline = fields.map(field => ({
+      $group: {
+        _id: null,
+        [field]: { $addToSet: `$${field}` }
+      }
+    }));
 
+    const groupValues = await this.aggregate([aggregationPipeline[0]]);
+    const orderValues = await this.aggregate([aggregationPipeline[1]]);
+    const familyValues = await this.aggregate([aggregationPipeline[2]]);
+    const genusValues = await this.aggregate([aggregationPipeline[3]]);
+    const speciesValues = await this.aggregate([aggregationPipeline[4]]);
+    const areaValues = await this.aggregate([aggregationPipeline[5]]);
+    const originValues = await this.aggregate([aggregationPipeline[6]]);
+    const countryValues = await this.aggregate([aggregationPipeline[7]]);
 
+    const results = [groupValues[0]['group'], orderValues[0]['order'], familyValues[0]['family'], 
+    genusValues[0]['genus'], speciesValues[0]['species'],areaValues[0]['area'], originValues[0]['origin'], 
+    countryValues[0]['country']];
+  
+    return results;
+    
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
 
 const Item = mongoose.model("Item", itemSchema);
 
