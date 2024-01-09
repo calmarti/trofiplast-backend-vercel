@@ -65,6 +65,8 @@ itemSchema.statics.customFind = async function (filters, sort, skip, limit) {
 };
  */
 //nuevo getFieldValues: utiliza el framework aggregate de mongo
+
+
 itemSchema.statics.getFieldValues = async function () {
   try {
     const fields = ['group', 'order', 'family', 'genus', 'species', 'area', 'origin', 'country'];
