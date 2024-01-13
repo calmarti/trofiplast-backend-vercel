@@ -64,7 +64,8 @@ itemSchema.statics.customFind = async function (filters, sort, skip, limit) {
   }
 };
  */
-//nuevo getFieldValues: utiliza el framework aggregate de mongo
+
+//nuevo getFieldValues: utiliza el framework aggregate de mongo (más eficiente)
 
 
 itemSchema.statics.getFieldValues = async function () {
@@ -100,5 +101,5 @@ itemSchema.statics.getFieldValues = async function () {
 
 const Item = mongoose.model("Item", itemSchema);
 
-//opcional: no hace falta (¿porqué no?)
+
 module.exports = Item;
