@@ -7,15 +7,9 @@ var logger = require("morgan");
 require("dotenv").config();
 require("./lib/connectMongoose");
 
-
-//TODO: el handler.js es solo un ejemplo, prueba a quitarlo
-//TODO: it works!
-
-
-
 var cors = require('cors');
 
-console.log(process.env);
+//console.log(process.env);
 
 var app = express();
 
