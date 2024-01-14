@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "initDB": "node ./api/initDb.js"
+    "initDB": "node ./api/initDb.js",
+    "vercel": "vercel dev --listen 3001"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,8 @@
     "http": "^0.0.1-security",
     "mongoose": "^6.9.0",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "vercel": "^33.1.0"
   }
 }

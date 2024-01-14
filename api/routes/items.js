@@ -6,7 +6,7 @@ const Item = require("../models/Item");
 
 router.get("/", async (req, res, next) => {
   try {
-    console.log("req.query", req.query);
+    //console.log("req.query", req.query);
 
     const filters = {};
     const sort = req.query.sort || "_id";
@@ -24,8 +24,8 @@ router.get("/", async (req, res, next) => {
 
     const maxDate = parseInt(req.query.maxDate);
     const minDate = parseInt(req.query.minDate);
-    console.log("minDate", minDate);
-    console.log("maxDate", maxDate);
+    //console.log("minDate", minDate);
+    //console.log("maxDate", maxDate);
 
     //Si hay min y max ==> no funciona porque el filtro es conjunto unión de from y to y no intersección
     if (req.query.minDate && req.query.maxDate) {
@@ -42,7 +42,7 @@ router.get("/", async (req, res, next) => {
     //Si solo hay min
 
     //Si solo hay max
-    console.log("filters", filters);
+    //console.log("filters", filters);
     //TODO: OJO: agregar campos de fecha al if statement de abajo
     const result = await Item.customFind(filters, sort, skip, limit);
     //capo el endpoint: cuando el submit viene con todos los campos vacíos (es decir, cuando no he seleccionado ningún filtro) ni siquiera devuelvo un array vacío sino null
@@ -102,7 +102,7 @@ router.post("/", async (req, res, next) => {
 //rutas que devuelven array de valores posibles de los distintos campos
 router.get("/fields", async function (req, res, next) {
   const field = null;
-  console.log(field);
+  //console.log(field);
   try {
     const values = await Item.getFieldValues(field);
     res.json({ result: values });
